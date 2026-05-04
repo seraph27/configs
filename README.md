@@ -1,4 +1,4 @@
-# nvim
+# configs
 
 Personal Neovim config built on [LazyVim](https://github.com/LazyVim/LazyVim), tuned for competitive programming (C++/Rust) and general use.
 
@@ -36,9 +36,7 @@ bamboo, catppuccin, everforest, flexoki, gruvbox, kanagawa, matteblack, monokai-
 
 ```bash
 git clone https://github.com/seraph27/configs ~/configs
-brew install stow   # or: apt install stow
-stow --dir=~/configs --target=~ nvim
-stow --dir=~/configs --target=~ tmux
+cd ~/configs && ./install.sh
 ```
 
 Open Neovim. Lazy will auto-install all plugins.
