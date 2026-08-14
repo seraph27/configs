@@ -1,6 +1,20 @@
 # configs
 
-Personal Neovim config built on [LazyVim](https://github.com/LazyVim/LazyVim), tuned for competitive programming (C++/Rust) and general use.
+Personal Neovim config built on [LazyVim](https://github.com/LazyVim/LazyVim), tuned for competitive programming (C++/Rust) and general use, plus a Claude Code setup.
+
+## Claude Code
+
+`claude/` holds the settings, status line, and hooks. `install.sh` symlinks the scripts into `~/.claude` and copies `settings.json` (backing up any existing one to `settings.json.bak`).
+
+The status line renders `branch │ model·effort │ context gauge │ 7d quota` in Catppuccin Mocha:
+
+```
+main │ opus-5·xhigh │ ███░░░░░░░ 34% 1M │ 7d 41%
+```
+
+The gauge turns yellow at 55% of the context window and red at 80%, and the size next to it shows whether the session got a 1M or 200k window. It falls back to 256-color, then to no color under `NO_COLOR`, and to ASCII glyphs outside a UTF-8 locale. Without `jq` it degrades to branch and model rather than failing.
+
+Two hooks: `guard-bash-global.sh` blocks cross-project footguns on `PreToolUse` (pkill, printenv, reading `.env`, `git reset --hard`, `git clean -f`, plain `--force` pushes, recursive `rm` outside temp dirs), and `label-session.sh` auto-names each background agent from its first real prompt and gives it a deterministic color.
 
 ## Plugins
 
