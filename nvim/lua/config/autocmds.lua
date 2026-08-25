@@ -24,9 +24,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 -- Competitive programming template auto-insertion
 local templates = {
   { "*/projecteuler/*.py", "py_template.py" },
+  { "*/atcoder/*.py", "py_template.py" },
   -- cpp
   { "*/codeforces/*.cpp", "multitest.cpp" },
   { "*/atcoder/*.cpp", "atcoder.cpp" },
+  { "*/atcoder/*.ts", "atcoder.ts" },
   { "*/usaco/*.cpp", "singletest.cpp" },
   { "*/cses/*.cpp", "singletest.cpp" },
   { "*/leetcode/*.cpp", "leetcode_local.cpp" },
